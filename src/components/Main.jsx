@@ -6,7 +6,11 @@ export default function Main() {
   return (
     <main className="main">
       <h2 className="main__title">Projects</h2>
-      <Card />
+      <div className="card__container">
+        <Card />
+        <Card />
+        <Card />
+      </div>
     </main>
   );
 }
