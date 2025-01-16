@@ -1,9 +1,14 @@
 import "../style/styles.css";
 
-export default function Button({ text, color }) {
+export default function Button({ text, link, color }) {
   return (
-    <button className={`button ${color}`}>
+    <a
+      className={`button ${color}`}
+      href={link || "#"}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span className="button__text">{text}</span>
-    </button>
+    </a>
   );
 }

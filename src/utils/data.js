@@ -13,8 +13,18 @@ const data = [
     description:
       "Website portal berita modern, yang dibuat menggunakan CSS grid dan mobile layout responsif.",
     button: [
-      { id: 1, text: "Github", color: "github" },
-      { id: 2, text: "Website", color: "website" },
+      {
+        id: 1,
+        text: "Github",
+        link: "https://github.com/arifmuharam/news-web",
+        color: "github",
+      },
+      {
+        id: 2,
+        text: "Website",
+        link: "https://menit-web.netlify.app/",
+        color: "website",
+      },
     ],
   },
   {
@@ -30,8 +40,18 @@ const data = [
     description:
       "Aplikasi web sederhana untuk untuk membantu melacak buku-buku favorit dengan mudah.",
     button: [
-      { id: 1, text: "Github", color: "github" },
-      { id: 2, text: "Website", color: "website" },
+      {
+        id: 1,
+        text: "Github",
+        link: "https://github.com/arifmuharam/bookshelf-web",
+        color: "github",
+      },
+      {
+        id: 2,
+        text: "Website",
+        link: "https://bookshelf-webbapp.netlify.app/",
+        color: "website",
+      },
     ],
   },
   {
@@ -46,7 +66,14 @@ const data = [
     ],
     description:
       "Aplikasi yang bertujuan untuk menjaga lingkungan dari limbah dan menerapkan ekonomi yang berkelanjutan.",
-    button: [{ id: 1, text: "Github", color: "github" }],
+    button: [
+      {
+        id: 1,
+        text: "Github",
+        link: "https://github.com/arifmuharam/EcoCycle",
+        color: "github",
+      },
+    ],
   },
 ];
 

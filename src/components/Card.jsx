@@ -52,11 +52,7 @@ export default function Card({
         <p className="card__description">{description}</p>
         <div className="button__container">
           {button.map((content) => (
-            <Button
-              key={content.id}
-              text={content.text}
-              color={content.color}
-            />
+            <Button key={content.id} {...content} />
           ))}
         </div>
       </div>
