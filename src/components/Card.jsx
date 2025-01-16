@@ -1,8 +1,18 @@
 import { useState } from "react";
 import "../style/styles.css";
 import Logo from "../assets/images/menit-logo.svg";
+import Label from "./Label";
+import Button from "./Button";
 
-export default function Card() {
+export default function Card({
+  imageProject,
+  imageProjectMobile,
+  imageLogo,
+  title,
+  label,
+  description,
+  button,
+}) {
   const [isActive, setIsActive] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -20,19 +30,35 @@ export default function Card() {
       onClick={toggleCardContent}
       onMouseUp={handleMouseUp}
     >
+      {/* <picture>
+        <source srcSet={imageProjectMobile} media="(max-width: 768px)" />
+        <img src={imageProject} alt="Gambar responsif" />
+      </picture> */}
       <img
-        src="https://images.unsplash.com/photo-1731432245362-26f9c0f1ba2f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8"
+        src={imageProject}
         alt="Gambar Proyek"
         className={`card__photo ${isClicked ? "clicked" : ""}`}
       />
       <div className={`card__content ${isActive ? "active" : ""}`}>
-        <img src={Logo} alt="Logo aplikasi" className="card__logo" />
-        <p className="card__text">Card Title</p>
-        <p className="card__description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco.
-        </p>
+        <div className="card__title">
+          <img src={imageLogo} alt="Logo aplikasi" className="card__logo" />
+          <p className="card__text">{title}</p>
+        </div>
+        <div className="label__container">
+          {label.map((tech) => (
+            <Label key={tech.id} text={tech.name} className={tech.className} />
+          ))}
+        </div>
+        <p className="card__description">{description}</p>
+        <div className="button__container">
+          {button.map((content) => (
+            <Button
+              key={content.id}
+              text={content.text}
+              color={content.color}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
