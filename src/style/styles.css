@@ -38,10 +38,20 @@ h1 {
   margin: 0;
   font-size: 24px;
   color: #000000;
-  font-weight: 700;
+  font-weight: 600;
 }
 
+.card__title {
+  display: flex;
+  gap: 10px;
+}
 
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #000000;
+  line-height: 1.4;
+}
 
 /* Desktop Layout */
 @media (min-width: 1110px) {
@@ -91,8 +101,6 @@ h1 {
   .text__subrole {
     grid-area: 5 / 5 / 6 / -1;
   }
-
-  /* Main Content */
 
   .card__container {
     display: flex;
@@ -145,13 +153,6 @@ h1 {
 
   .card:hover .card__photo {
     scale: 0;
-  }
-
-  .card__description {
-    margin: 10px 0 0;
-    font-size: 14px;
-    color: #777;
-    line-height: 1.4;
   }
 }
 
@@ -212,8 +213,6 @@ h1 {
     grid-area: 5 / 2 / 6 / -1;
   }
 
-  /* Main Content */
-
   .card__container {
     display: flex;
     flex-direction: column;
@@ -253,7 +252,7 @@ h1 {
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-   .card__content.active {
+  .card__content.active {
     opacity: 1;
     visibility: visible;
     transform: rotateX(0deg);
@@ -265,12 +264,5 @@ h1 {
 
   .card__photo.clicked {
     scale: 0;
-  }
-
-  .card__description {
-    margin: 10px 0 0;
-    font-size: 14px;
-    color: #777;
-    line-height: 1.4;
   }
 }

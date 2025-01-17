@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../style/styles.css";
 import Logo from "../assets/images/menit-logo.svg";
 
-export default function Card() {
+export default function Card({ title, logo }) {
   const [isActive, setIsActive] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
 
@@ -26,8 +26,10 @@ export default function Card() {
         className={`card__photo ${isClicked ? "clicked" : ""}`}
       />
       <div className={`card__content ${isActive ? "active" : ""}`}>
-        <img src={Logo} alt="Logo aplikasi" className="card__logo" />
-        <p className="card__text">Card Title</p>
+        <div className="card__title">
+          <img src={logo} alt="Logo aplikasi" className="card__logo" />
+          <p className="card__text">{title}</p>
+        </div>
         <p className="card__description">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
