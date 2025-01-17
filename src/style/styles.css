@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Clash Grotesk";
-  src: url("/src/assets/fonts/ClashGrotesk.ttf") format("truetype");
+  src: url("/assets/fonts/ClashGrotesk.ttf") format("truetype");
 }
 
 body {
@@ -43,18 +43,87 @@ h1 {
 
 .card__title {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
 .card__description {
-  margin: 10px 0 0;
+  margin: 0;
   font-size: 14px;
+  font-weight: 500;
   color: #000000;
   line-height: 1.4;
 }
 
+/* Label.css */
+.label.react {
+  background-color: #61dafb;
+  color: black;
+}
+
+.label.javascript {
+  background-color: #f7df1e;
+  color: black;
+}
+
+.label.css {
+  background-color: #264de4;
+  color: white;
+}
+
+.label.html {
+  background-color: #e34f26;
+  color: white;
+}
+
+.label.scss {
+  background-color: #e326aa;
+  color: white;
+}
+
+.label.kotlin {
+  background-color: #9111a1;
+  color: white;
+}
+
+.label.android__studio {
+  background-color: #1dbb44;
+  color: white;
+}
+
+.label.firebase {
+  background-color: #e32626;
+  color: white;
+}
+
+/* Button */
+
+.button.github {
+  background-color: #aa1bbd;
+}
+
+.button.website {
+  background-color: #252525;
+}
+
 /* Desktop Layout */
 @media (min-width: 1110px) {
+  /* Label */
+  .label__container {
+    display: flex;
+    gap: 5px;
+  }
+
+  .label {
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    width: fit-content;
+    margin-block: 10px;
+
+    font-size: 14px;
+    font-weight: 500;
+  }
+
   /* Header */
   .container {
     display: grid;
@@ -117,7 +186,6 @@ h1 {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    perspective: 1000px;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
@@ -154,11 +222,71 @@ h1 {
   .card:hover .card__photo {
     scale: 0;
   }
+
+  /* Button */
+  .button__container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .button {
+    width: 100%;
+    padding-block: 12px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .button__text {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: "Clash Grotesk", sans-serif;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+  }
+
+  .button.github:hover {
+    background-color: #851794;
+  }
+
+  .button.github:active {
+    background-color: #651270;
+  }
+
+  .button.website:hover {
+    background-color: #201f1f;
+  }
+
+  .button.website:active {
+    background-color: #111111;
+  }
 }
 
 /* Mobile Layout */
 
 @media (max-width: 768px) {
+  /* Label */
+  .label__container {
+    display: flex;
+    gap: 5px;
+  }
+
+  .label {
+    padding: 0.3rem 0.6rem;
+    border-radius: 15px;
+    width: fit-content;
+    margin-block: 10px;
+
+    font-size: 10px;
+    font-weight: 500;
+  }
+
   .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -222,19 +350,19 @@ h1 {
   .card {
     position: relative;
     width: 100%;
-    height: 200px;
+    height: 100%;
     background-color: #ffffff;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    perspective: 1000px;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
-  .card img {
-    width: fit-content;
+  .card > img {
+    width: 310px;
+    height: 230px;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 
@@ -264,5 +392,43 @@ h1 {
 
   .card__photo.clicked {
     scale: 0;
+  }
+
+  .card__logo {
+    width: 35px;
+  }
+
+  .button__container {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .button {
+    width: 100%;
+    padding-block: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .button__text {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Clash Grotesk", sans-serif;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 1px;
+  }
+
+  .button.github:active {
+    background-color: #651270;
+  }
+
+  .button.website:active {
+    background-color: #111111;
   }
 }

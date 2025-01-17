@@ -7,8 +7,8 @@ export default function Main() {
     <main className="main">
       <h2 className="main__title">Projects</h2>
       <div className="card__container">
-        {data.map((card) => (
-          <Card key={card.id} title={card.title} logo={card.imageUrl} />
+        {data.map((project) => (
+          <Card key={project.id} {...project} />
         ))}
       </div>
     </main>

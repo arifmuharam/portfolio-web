@@ -1,7 +1,7 @@
 import "../style/styles.css";
-import Photo from "../assets/images/foto-profil.png";
-import imageRight from "../assets/images/image-right.png";
-import imageLeft from "../assets/images/image-left.png";
+import Photo from "/assets/images/foto-profil.png";
+import imageRight from "/assets/images/image-right.png";
+import imageLeft from "/assets/images/image-left.png";
 export default function Header() {
   return (
     <header className="container">
